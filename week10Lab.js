@@ -41,10 +41,24 @@ Part 1: Create a form with only JavaScript`)
            You should now have a label and a input on your website.
            Do the same steps, appending a label/input for Email, and a submit button to your form.
  * ↓ YOUR CODE HERE ↓ */
-
-// console.log(myForm)
+let myForm = document.createElement('form')
+let myInput = document.createElement('input')
+let myLabel = document.createElement('label')
+let myEmail = document.createElement('label')
+let myEmailInput = document.createElement('input')
+let submit = document.createElement('button')
+myLabel.innerHTML = "Name"
+myEmail.innerHTML = "Email"
+submit.innerHTML = "Submit"
+myForm.appendChild(myLabel)
+myForm.appendChild(myInput)
+myForm.appendChild(myEmail)
+myForm.appendChild(myEmailInput)
+myForm.appendChild(submit)
+document.body.appendChild(myForm)
+console.log(myForm)
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer: You can also change the styling of the html 
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
 console.log(`-------------------------- 
@@ -59,9 +73,13 @@ Part 2: Styling our form with only JavaScript`)
  *  Step 3: Give your form a display of flex, a flex-direction of column, and a max-width of 250px
  *
  * ↓ YOUR CODE HERE ↓ */
-
+myForm.style.backgroundColor = 'red'
+myForm.style.color = 'white'
+myForm.style.display = 'flex'
+myForm.style.flexDirection = 'column'
+myForm.style.maxWidth = '250px'
 //Question: Do you prefer styling with JavaScript or CSS?
-//Answer:
+//Answer: CSS since it feels easier to do it with CSS, however if I want it to be functional and change whenever I do something it would be good to do it in JS
 
 /*------------------------ Creating a table with only JavaScript ------------------------*/
 console.log(`-------------------------- 
@@ -79,11 +97,35 @@ Part 3: Creating a table with only JavaScript`)
 
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
+let table = document.createElement('table')
+let tableRow1 = document.createElement('tr')
+let tableRow2 = document.createElement('tr')
+let tableData1 = document.createElement('td')
+let tableData2 = document.createElement('td')
+let tableData3 = document.createElement('td')
+let tableData4 = document.createElement('td')
 
-// console.log(myTable)
+tableData1.innerHTML = 'Name'
+tableData2.innerHTML = 'Email'
+tableData3.innerHTML = 'Yarik'
+tableData4.innerHTML = 'x@gmail.com'
+
+table.appendChild(tableRow1)
+table.appendChild(tableRow2)
+tableRow1.appendChild(tableData1)
+tableRow1.appendChild(tableData2)
+tableRow2.appendChild(tableData3)
+tableRow2.appendChild(tableData4)
+
+
+document.body.appendChild(table)
+
+table.style.border = '1px solid black'
+
+console.log(table)
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
-//Answer:
+//Answer: If you want to add things to the table or create a new table with a click of a button from a user than having it done in JS can be really useful
 
 /*------------------------ Changing our body background on click ------------------------*/
 console.log(`-------------------------- 
@@ -103,10 +145,13 @@ Part 4: Changing our background on click`)
  * Step 7: Click the button in your index.html and see the background change!
  *
  * ↓ YOUR CODE HERE ↓ */
-
+let myButton = document.getElementById('myButton')
+myButton.addEventListener('click', () => {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+})
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
-//Answer:
+//Answer: mouseup, mousedown, onmouseover, mousemove, scroll
 
 console.log(`-----------Finished------------`)
 
